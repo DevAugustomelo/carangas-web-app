@@ -1,4 +1,5 @@
 import './App.css';
+import Home from './pages/home/Home';
 
 
 
@@ -6,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <h1>CarangasCar</h1>
+    <Home />
   );
 }
 
