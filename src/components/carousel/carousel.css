@@ -1,0 +1,69 @@
+
+
+
+
+
+
+.crs-container {
+    width: 100%;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.crs-arrows {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+}
+
+.crs-arrows svg {
+    width: 38px;
+    height: 38px;
+    margin: 25px 25px;
+    color: #fff;
+}
+
+.crs-arrows svg:active{
+    color: #ddae36;
+}
+
+.crs-item {
+    width: 100vw;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center bottom; */
+}
+
+.crs-dots {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 25px;
+    cursor: pointer;
+}
+
+.crs-dots svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.crs-dots svg:active {
+    color: #ddae36;
+}
+

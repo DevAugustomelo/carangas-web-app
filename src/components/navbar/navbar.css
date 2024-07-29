@@ -22,9 +22,10 @@
 
 #title-logo {
     font-family: 'Lobster', sans-serif;
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 500;
     cursor: pointer;
+    color: #ddae36;
 }
 
 .nvb-menu {
