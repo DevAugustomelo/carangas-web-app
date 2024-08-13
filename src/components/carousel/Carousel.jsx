@@ -1,6 +1,11 @@
 
+
+
+
+
 import { useState, useEffect } from 'react';
-import { BsCircleFill, BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill  } from 'react-icons/bs';
+import { BsCircleFill } from 'react-icons/bs';
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 
 import "./carousel.css"
@@ -45,8 +50,8 @@ const Carousel = () => {
     return (
         <div className="crs-container">
             <div className="crs-arrows">
-                <BsFillArrowLeftCircleFill onClick={ () => navPrev() }/>
-                <BsFillArrowRightCircleFill onClick={ () => navNext() }/>
+                <MdArrowBackIos onClick={ () => navPrev() }/>
+                <MdArrowForwardIos onClick={ () => navNext() }/>
             </div>
 
             <div 
@@ -57,7 +62,7 @@ const Carousel = () => {
                 {/* Make dot icons for carousel */}
                 {imgList.map((item, index) => (
                     <BsCircleFill onClick={ () => navDot(index) }/>
-                ))};
+                ))}
             </div>
         </div>
     )
