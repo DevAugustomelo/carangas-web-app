@@ -1,0 +1,82 @@
+
+
+
+
+
+.ctc-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.ctc-content {
+    width: 1200px;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.ctc-info {
+    margin-left: 20px;
+}
+
+.ctc-info h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #323232;
+}
+
+.ctc-info h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: darkred;
+}
+
+.ctc-info h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.ctc-info h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #323232;
+}
+
+.ctc-form form input[type="text"]  {
+    width: 100%;
+    height: 45px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.ctc-form textarea {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    resize: none;
+    font-size: 15px;
+    font-family: inherit;
+
+}
+
+.ctc-form form button {
+    width: 100%;
+    height: 55px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #323232;
+    color: #fff;
+    font-size: 15px;
+}

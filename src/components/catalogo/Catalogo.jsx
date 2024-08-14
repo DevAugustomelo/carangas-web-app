@@ -1,13 +1,25 @@
 import React from 'react';
-import "./catalogo.css"
-import CarouselSm from '../carousel/CarouselSm';
+import Card from '../card/Card';
+import "./catalogo.css";
+
 
 
 
 
 function Catalogo() {
     return(
-        <CarouselSm />
+        <div className="cat-container">
+            <div className="cat-content">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </div>
     )
 };
 
