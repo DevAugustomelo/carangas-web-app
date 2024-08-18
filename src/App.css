@@ -6,6 +6,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root{
+  --primary-black:#0f0f0f;
+  --primary-black2: #323232;
+  --primary-blue:#001b3eff;
+  --primary-blue2:#0f3b72ff;
+  --primary-red:#410002ff;
+  --primary-yellow:#ddae36;
+}
+
 * {
   margin: 0;
   padding: 0;

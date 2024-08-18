@@ -6,6 +6,7 @@
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 60px;
+    text-decoration: none;
 }
 
 .cat-content {
@@ -13,8 +14,26 @@
     height: max-content;
     display: flex;
     justify-content: center;
-    align-items: flex-start;;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 25px;
     margin-top: 40px;
+}
+
+.cat-content button {
+    width: 280px;
+    height: 45px;
+    padding: 10px 10px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-black2);
+    cursor: pointer;
+}
+
+.cat-content a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
 }

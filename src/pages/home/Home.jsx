@@ -5,18 +5,14 @@ import Catalogo from "../../components/catalogo/Catalogo";
 import Contact from "../../components/contact/Contact";
 import Footer from "../../components/footer/Footer";
 
-
-
-
 const Home = () => {
-  
   return (
     <>
-    <Navbar />
-    <Carousel />
-    <Catalogo />
-    <Contact />
-    <Footer />
+      <Navbar />
+      <Carousel />
+      <Catalogo />
+      <Contact />
+      <Footer />
     </>
   );
 };
