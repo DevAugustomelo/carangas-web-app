@@ -30,6 +30,7 @@
 
 #title-logo:hover { 
     filter: drop-shadow(0px 0px 8px #fbff00);
+    text-shadow: 2px 2px 5px white;
     transform: scale(1.05);
     transition: 0.5s;
 }

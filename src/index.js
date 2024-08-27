@@ -13,7 +13,9 @@ import Catalogo from "./pages/catalogo/Catalogo";
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/car", element: <Car /> },
+  { path: "/car/:id", element: <Car /> },
   { path: "/catalogo", element: <Catalogo /> },
+  { path: "/catalogo/car/:id", element: <Car /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

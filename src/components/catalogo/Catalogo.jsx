@@ -10,13 +10,15 @@ function Catalogo() {
       <div className="cat-content">
         {carInfo.length > 0 ? (
           carInfo
-            .slice(0, 12)
+            .slice(0, 8)
             .map((item, index) => (
               <Card
+                key={index}
                 item={item}
                 marca={item.marca}
                 modelo={item.modelo}
                 ano={item.ano}
+                km={item.km}
                 cidade={item.cidade}
               />
             ))
