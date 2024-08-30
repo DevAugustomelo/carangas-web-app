@@ -60,7 +60,7 @@ function CarouselSm() {
             <div className="crsm-dots">
                 {
                     imgList.map((item, index) => (
-                        <MdCircle onClick={() => navDot(index) }/>
+                        <MdCircle key={index} onClick={() => navDot(index) }/>
 
                     ))
                 }

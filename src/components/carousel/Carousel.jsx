@@ -61,7 +61,7 @@ const Carousel = () => {
             <div className="crs-dots">
                 {/* Make dot icons for carousel */}
                 {imgList.map((item, index) => (
-                    <BsCircleFill onClick={ () => navDot(index) }/>
+                    <BsCircleFill key={index} onClick={ () => navDot(index) }/>
                 ))}
             </div>
         </div>

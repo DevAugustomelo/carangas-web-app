@@ -4,7 +4,7 @@ import { FaMapMarkedAlt } from "react-icons/fa";
 import CarouselSm from "../carousel/CarouselSm";
 import "./card.css";
 
-const Card = ({ marca, modelo, ano, cidade, km}) => {
+const Card = ({ make, model, year, color}) => {
   return (
     <div className="crd-container">
       <div className="crd-top">
@@ -12,16 +12,16 @@ const Card = ({ marca, modelo, ano, cidade, km}) => {
       </div>
       <div className="crd-bottom">
         <div className="crd-carInfo">
-          <h1>{marca}</h1>
-          <h2>{modelo}</h2>
-          <span>{ano}</span>
+          <h1>{make}</h1>
+          <h2>{model}</h2>
+          <span>{year}</span>
         </div>
         <div className="crd-price">
-          <h1>KM {km}</h1>
+          <h1>color {color}</h1>
         </div>
         <div className="crd-location">
           <FaMapMarkedAlt />
-          <span>{cidade}</span>
+          <span>PAULISTA-PE</span>
         </div>
       </div>
     </div>

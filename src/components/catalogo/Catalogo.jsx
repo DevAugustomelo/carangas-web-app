@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../card/Card";
 import { Link } from "react-router-dom";
 import { carInfo } from "../../data/car";
 import "./catalogo.css";
+import api from "../../services/api/carangasApi";
 
 function Catalogo() {
+
+  const [posts, setPosts] = useState([]);
+
+  const getPosts = () => (
+    
+    api.get('/cars')
+    .then(response => setPosts(response.data))
+    .catch(error => console.log(error))
+    );
+
+  useEffect(() => {
+      getPosts()
+  }, []);
+
+
+
   return (
     <div className="cat-container">
       <div className="cat-content">
-        {carInfo.length > 0 ? (
-          carInfo
+        {posts.length > 0 ? (
+          posts
             .slice(0, 8)
             .map((item, index) => (
               <Card
                 key={index}
                 item={item}
-                marca={item.marca}
-                modelo={item.modelo}
-                ano={item.ano}
-                km={item.km}
-                cidade={item.cidade}
+                make={item.make}
+                model={item.model}
+                year={item.year}
+                color={item.color}
               />
             ))
         ) : (
