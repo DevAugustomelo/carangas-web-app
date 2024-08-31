@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../card/Card";
 import { Link } from "react-router-dom";
-import { carInfo } from "../../data/car";
 import "./catalogo.css";
 import api from "../../services/api/carangasApi";
 
@@ -39,13 +38,16 @@ function Catalogo() {
               />
             ))
         ) : (
-          <p>Carregando Catálogo....</p>
+          <div>
+          <p>Carregando Catálogo.... </p>
+          <img src="assets/images/wheel-spin-11932_128.gif" alt="car-gif" />
+          </div>
         )}
 
-        <button>
-          <Link to="/catalogo">Ver Catálogo completo</Link>
-        </button>
       </div>
+        <button>
+          <Link to="/catalogo">Catálogo completo</Link>
+        </button>
     </div>
   );
 }

@@ -9,6 +9,25 @@
     text-decoration: none;
 }
 
+
+.cat-container button {
+    width: 280px;
+    height: 45px;
+    padding: 10px 10px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-black2);
+    cursor: pointer;
+}
+
+.cat-container a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 .cat-content {
     width: 1200px;
     height: max-content;

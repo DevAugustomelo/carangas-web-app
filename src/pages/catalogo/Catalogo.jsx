@@ -7,6 +7,7 @@ import Card from "../../components/card/Card";
 import Pagination from "../../components/pagination/Pagination";
 
 import "./catalogo.css";
+import getPosts from "../../services/utils/funtions";
 
 const LIMIT = 12;
 
@@ -15,6 +16,13 @@ export default function CatalogoPage() {
   const [cards, setCards] = useState(null);
   const [skip, setSkip] = useState(0);
   const [search, setSearch] = useState("");
+ 
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    getPosts(posts, setPosts);
+  }, []);
+
 
   useEffect(() => {
     const searchedCards = (skip, end) => {
@@ -56,22 +64,24 @@ export default function CatalogoPage() {
             </div>
           </div>
           <div className="cat-main">
-            { carInfo.length > 0 ? ( 
-              cards &&
-                cards.map((item, index) => {
+            { posts.length > 0 ? ( 
+              posts &&
+                posts.map((item, index) => {
                   const car = JSON.parse(JSON.stringify(item));
                   return <Card
                     key={index}
                     item={car}
-                    marca={item.marca}
-                    modelo={item.modelo}
-                    ano={item.ano}
-                    km={item.km}
-                    cidade={item.cidade}
+                    make={item.make}
+                    model={item.model}
+                    year={item.year}
+                    color={item.color}
                   />
 })
              ) : (
-              <p>Carregando Catálogo....</p>
+              <div>
+              <p>Carregando Catálogo.... </p>
+              <img src="assets/images/wheel-spin-11932_128.gif" alt="car-gif" />
+              </div>
             ) }
           </div>
           <div className="cat-pagination">

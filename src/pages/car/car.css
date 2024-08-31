@@ -22,3 +22,11 @@
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 5px; 
 }
+
+
+.car-info h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #323232;
+}
