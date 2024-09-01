@@ -13,6 +13,7 @@ const Car = () => {
     getPosts(posts, setPosts);
   }, []);
 
+  console.log("impressão" + posts);
 
   const { id } = useParams();
   const selectedCar = () => {
@@ -20,21 +21,20 @@ const Car = () => {
   }
 
   const carr = selectedCar();
-  console.log(carr);
   return (
     <>
       <Navbar />
-      {carr && (
+      {posts && (
         <>
           <div className="car-container">
             <div className="car-content">
               <div className="car-info">
-                <h1>{carr[0].make}</h1>
-                <h2>{carr[0].model}</h2>
+                <h1>{posts[0].make}</h1>
+                <h2>{posts[0].model}</h2>
                 <div className="car-detail">
                   <div className="car-item">
                     <h3>Ano</h3>
-                    <span>{carr[0].year}</span>
+                    <span>{posts[0].year}</span>
                   </div>
                 </div>
               </div>
