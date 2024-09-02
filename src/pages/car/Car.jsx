@@ -4,18 +4,26 @@ import Footer from "../../components/footer/Footer";
 
 import { useParams } from "react-router";
 import "./car.css";
-import getPosts from "../../services/utils/funtions";
+import api from "../../services/api/carangasApi";
 
 const Car = () => {
   const [posts, setPosts] = useState([]);
+  
+  const { id } = useParams();
+  const getCarId = () => (
+    
+    api.get(`/cars/:${id}`)
+    .then(response => setPosts(response.data))
+    .catch(error => console.log(error))
+    );
 
   useEffect(() => {
-    getPosts(posts, setPosts);
+      getCarId()
   }, []);
 
-  console.log("impressão" + posts);
+  {console.log("impressão" + posts);}
+  
 
-  const { id } = useParams();
   const selectedCar = () => {
     return posts.filter((car) => car._id === parseInt(id));
   }
@@ -24,17 +32,17 @@ const Car = () => {
   return (
     <>
       <Navbar />
-      {posts && (
+      {carr && (
         <>
           <div className="car-container">
             <div className="car-content">
               <div className="car-info">
-                <h1>{posts[0].make}</h1>
-                <h2>{posts[0].model}</h2>
+                <h1>{carr[0].make}</h1>
+                <h2>{carr[0].model}</h2>
                 <div className="car-detail">
                   <div className="car-item">
                     <h3>Ano</h3>
-                    <span>{posts[0].year}</span>
+                    <span>{carr[0].year}</span>
                   </div>
                 </div>
               </div>

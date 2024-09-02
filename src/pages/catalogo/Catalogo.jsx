@@ -7,7 +7,7 @@ import Card from "../../components/card/Card";
 import Pagination from "../../components/pagination/Pagination";
 
 import "./catalogo.css";
-import getPosts from "../../services/utils/funtions";
+import { getPosts } from "../../services/utils/crudFunctions";
 
 const LIMIT = 12;
 
@@ -22,6 +22,7 @@ export default function CatalogoPage() {
   useEffect(() => {
     getPosts(posts, setPosts);
   }, []);
+
 
 
   useEffect(() => {

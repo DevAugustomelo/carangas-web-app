@@ -2,23 +2,15 @@ import React, { useEffect, useState } from "react";
 import Card from "../card/Card";
 import { Link } from "react-router-dom";
 import "./catalogo.css";
-import api from "../../services/api/carangasApi";
+import { getPosts } from "../../services/utils/crudFunctions";
 
 function Catalogo() {
 
   const [posts, setPosts] = useState([]);
 
-  const getPosts = () => (
-    
-    api.get('/cars')
-    .then(response => setPosts(response.data))
-    .catch(error => console.log(error))
-    );
-
   useEffect(() => {
-      getPosts()
+    getPosts(posts, setPosts);
   }, []);
-
 
 
   return (
