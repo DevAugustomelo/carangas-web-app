@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../../services/api/carangasApi";
+import { useParams } from "react-router";
 
-const NewCar = () => {
+
+
+const UpdateCar = () => {
+  const { id } = useParams();
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
   const [color, setColor] = useState("");
+  const [car, setCar] = useState([]);
 
   const changeOnClick = (event) => {
     event.preventDefault();
@@ -18,7 +23,7 @@ const NewCar = () => {
     };
 
     api
-      .post("/cars/add", cars)
+      .put(`/cars/update/${id}`, cars)
       .then((res) => alert(res.data))
       .catch((error) => console.log(error.message));
 
@@ -28,17 +33,32 @@ const NewCar = () => {
     setColor("");
   };
 
+  useEffect(() => {
+    api.get(`/cars/${id}`)
+      .then((response) => [
+        setCar(response.data),
+        setMake(response.data.make),
+        setModel(response.data.model),
+        setYear(response.data.year),
+        setColor(response.data.color),
+      ])
+      .catch((error) => console.log(error.message));
+  }, []);
+
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
       <div className="w-full relative">
         <img
           className="w-full h-96 object-cover"
-          src="assets/images/shelby.png"
+          src="public/assets/images/shelby.png"
           alt="banner-car-image"
         />
       </div>
       <div className="ctc-form">
-        <h1 className="flex justify-center items-center text-4xl font-semibold m-3">Oba! Carango chegando no catálogo</h1>
+        <h1 className="flex justify-center items-center text-2xl font-extrabold m-3">
+          Atualizar Carro
+        </h1>
         <form onSubmit={changeOnClick} encType="multipart/form-data">
           <input
             required={true}
@@ -80,7 +100,7 @@ const NewCar = () => {
             type="submit"
             className="hover:bg-neutral-800 active:bg-neutral-900 focus:ring focus:ring-yellow-500"
           >
-            Enviar Cadastro
+            Atualizar Cadastro
           </button>
         </form>
       </div>
@@ -88,4 +108,4 @@ const NewCar = () => {
   );
 };
 
-export default NewCar;
+export default UpdateCar;

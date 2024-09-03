@@ -38,7 +38,7 @@ const Contact = () => {
               rows={10}
               placeholder="Digite aqui sua mensagem"
             ></textarea>
-            <button>Enviar Mensagem</button>
+            <button className="hover:bg-neutral-800 active:bg-neutral-900 focus:ring focus:ring-yellow-500">Enviar Mensagem</button>
           </form>
         </div>
       </div>

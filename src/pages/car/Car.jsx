@@ -7,50 +7,60 @@ import "./car.css";
 import api from "../../services/api/carangasApi";
 
 const Car = () => {
-  const [posts, setPosts] = useState([]);
-  
-  const { id } = useParams();
-  const getCarId = () => (
-    
-    api.get(`/cars/:${id}`)
-    .then(response => setPosts(response.data))
-    .catch(error => console.log(error))
-    );
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [year, setYear] = useState("");
+  const [color, setColor] = useState("");
+
+  var { id } = useParams();
+
+  const getCarId = () =>
+    api.get(`/cars/${id}`)
+      .then((response) => [
+        setMake(response.make),
+        setModel(response.model),
+        setYear(response.year),
+        setColor(response.color),
+      ])
+      .catch((error) => console.log(error.message));
 
   useEffect(() => {
-      getCarId()
+    getCarId();
   }, []);
 
-  {console.log("impressão" + posts);}
-  
-
-  const selectedCar = () => {
-    return posts.filter((car) => car._id === parseInt(id));
+  {
+    console.log("impressão" + make);
   }
 
-  const carr = selectedCar();
+  // const selectedCar = () => {
+  //   posts.filter((car) => car._id === parseInt(id));
+  // }
+
+  // const carr = selectedCar();
+  const teste = [];
   return (
     <>
       <Navbar />
-      {carr && (
+      {
         <>
           <div className="car-container">
             <div className="car-content">
               <div className="car-info">
-                <h1>{carr[0].make}</h1>
-                <h2>{carr[0].model}</h2>
+                <h1>{make}</h1>
+                {/* <h1>Ford</h1> */}
+                <h2>{model}</h2>
+                {/* <h2>Mustang</h2> */}
                 <div className="car-detail">
                   <div className="car-item">
-                    <h3>Ano</h3>
-                    <span>{carr[0].year}</span>
+                    <span>{year}</span>
+                    <h3>{color}</h3>
+                    <span>1980</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </>
-      )
-
       }
       <Footer />
     </>

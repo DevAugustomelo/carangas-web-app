@@ -25,9 +25,10 @@
     padding: 15px 20px;
 }
 
-.crd-carInfo h1 {
+.crd-bottom a h1 {
     font-size: 18px;
     font-weight: 600;
+    color:black
 
 }
 

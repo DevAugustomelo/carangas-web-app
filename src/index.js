@@ -10,6 +10,7 @@ import App from "./App";
 import Car from "./pages/car/Car";
 import Catalogo from "./pages/catalogo/Catalogo";
 import NewCar from "./pages/new-car/NewCar";
+import UpdateCar from "./pages/update-car/UpdateCar";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   { path: "/catalogo", element: <Catalogo /> },
   { path: "/catalogo/car/:id", element: <Car /> },
   { path: "/novo-carro", element: <NewCar /> },
+  { path: "/atualizar/:id", element: <UpdateCar /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -16,14 +16,12 @@ export default function CatalogoPage() {
   const [cards, setCards] = useState(null);
   const [skip, setSkip] = useState(0);
   const [search, setSearch] = useState("");
- 
+
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     getPosts(posts, setPosts);
   }, []);
-
-
 
   useEffect(() => {
     const searchedCards = (skip, end) => {
@@ -33,13 +31,12 @@ export default function CatalogoPage() {
   }, [skip]);
 
   const searchCar = (searchedText) => {
-    const resultCar = carInfo.filter((text) => (
+    const resultCar = carInfo.filter((text) =>
       text.modelo.includes(searchedText)
-    ));
+    );
 
     setCards(resultCar.length > LIMIT ? resultCar.slice(0, 12) : resultCar);
   };
-
 
   return (
     <>
@@ -61,32 +58,38 @@ export default function CatalogoPage() {
                 placeholder="Procure seu carango aqui."
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <BiSearch onClick={ () => searchCar(search) } />
+              <BiSearch onClick={() => searchCar(search)} />
             </div>
           </div>
           <div className="cat-main">
-            { posts.length > 0 ? ( 
+            {posts.length > 0 ? (
               posts &&
-                posts.map((item, index) => {
-                  const car = JSON.parse(JSON.stringify(item));
-                  return <Card
+              posts.map((item, index) => {
+                // const car = JSON.parse(JSON.stringify(item));
+                return (
+                  <Card
                     key={index}
-                    item={car}
+                    // item={car}
+                    id={item._id}
                     make={item.make}
                     model={item.model}
                     year={item.year}
                     color={item.color}
                   />
-})
-             ) : (
+                );
+              })) : (
               <div>
-              <p>Carregando Catálogo.... </p>
-              <img src="assets/images/wheel-spin-11932_128.gif" alt="car-gif" />
+                <p>Carregando Catálogo.... </p>
+                <img
+                  src="assets/images/wheel-spin-11932_128.gif"
+                  alt="car-gif"
+                />
               </div>
-            ) }
+            )}
           </div>
           <div className="cat-pagination">
             <Pagination
+              key={posts._id}
               limit={LIMIT}
               total={carInfo.length}
               skip={skip}
