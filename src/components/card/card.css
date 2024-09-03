@@ -44,11 +44,11 @@
 }
 
 .crd-price h1 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 
-.crd-location svg {
+.crd-location .icons svg {
     width: 18px;
     height: 18px;
     margin-right: 5px;
