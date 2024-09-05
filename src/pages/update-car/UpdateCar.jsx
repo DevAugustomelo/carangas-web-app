@@ -3,6 +3,9 @@ import api from "../../services/api/carangasApi";
 import { useParams } from "react-router";
 
 
+import Navbar from "../../components/navbar/Navbar"
+
+
 
 const UpdateCar = () => {
   const { id } = useParams();
@@ -47,16 +50,13 @@ const UpdateCar = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="w-full relative">
-        <img
-          className="w-full h-96 object-cover"
-          src="public/assets/images/shelby.png"
-          alt="banner-car-image"
-        />
-      </div>
-      <div className="ctc-form">
-        <h1 className="flex justify-center items-center text-2xl font-extrabold m-3">
+    <>
+    <Navbar className="m-0"/>
+    <div className="min-h-screen h-full flex flex-col justify-center items-center mt-0">
+     
+        <img className="w-full h-80 object-cover" src="https://images5.alphacoders.com/392/thumb-1920-392984.jpg" alt="banner" />
+      <div className="ctc-form m-0 ">
+        <h1 className="flex justify-center items-center text-2xl p-1 font-extrabold">
           Atualizar Carro
         </h1>
         <form onSubmit={changeOnClick} encType="multipart/form-data">
@@ -105,6 +105,7 @@ const UpdateCar = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

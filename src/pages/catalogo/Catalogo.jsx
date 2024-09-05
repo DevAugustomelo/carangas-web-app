@@ -25,14 +25,14 @@ export default function CatalogoPage() {
 
   useEffect(() => {
     const searchedCards = (skip, end) => {
-      return carInfo.slice(skip, end);
+      return posts.slice(skip, end);
     };
     setCards(searchedCards(skip, skip === 0 ? 1 * LIMIT : skip * LIMIT));
   }, [skip]);
 
   const searchCar = (searchedText) => {
-    const resultCar = carInfo.filter((text) =>
-      text.modelo.includes(searchedText)
+    const resultCar = posts.filter((text) =>
+      text.model.includes(searchedText)
     );
 
     setCards(resultCar.length > LIMIT ? resultCar.slice(0, 12) : resultCar);
@@ -91,7 +91,7 @@ export default function CatalogoPage() {
             <Pagination
               key={posts._id}
               limit={LIMIT}
-              total={carInfo.length}
+              total={posts.length}
               skip={skip}
               setSkip={setSkip}
             />

@@ -15,7 +15,8 @@ const Card = ({ make, model, year, color, id }) => {
   const deleteCarId = _id => {
     api.delete(`cars/${id}`)
     .then(res => alert(res.data))
-    .setCar(car.filter(item => item._id !== _id))
+    setCar(car.filter(item => item._id !== _id))
+
   }
 
 
@@ -82,12 +83,12 @@ const Card = ({ make, model, year, color, id }) => {
                 <CiCirclePlus />
               </span>
             </Link>
-            <Link to={`/atualizar/${_id}`}>
+            <Link to={`/atualizar/${id}`}>
               <span className=" text-red-950 flex">
                 <FaTools />
               </span>
             </Link>
-            <Link to={`/cars/${id}`} onClick={() => deleteCarId(car._id)}>
+            <Link to={`/`} onClick={() => deleteCarId(car._id)}>
               <span className=" text-red-950 flex ">
                 <MdDeleteSweep />
               </span>

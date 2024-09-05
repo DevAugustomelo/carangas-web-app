@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "../../services/api/carangasApi";
+import Navbar from "../../components/navbar/Navbar"
 
 const NewCar = () => {
   const [make, setMake] = useState("");
@@ -29,6 +30,8 @@ const NewCar = () => {
   };
 
   return (
+    <>
+    <Navbar className="m-0"/>
     <div className="min-h-screen flex flex-col justify-center items-center">
       <div className="w-full relative">
         <img
@@ -85,6 +88,7 @@ const NewCar = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
